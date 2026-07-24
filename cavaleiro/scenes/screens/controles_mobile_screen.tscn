@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://smohhnxn4oaj"]
+[gd_scene load_steps=31 format=3 uid="uid://smohhnxn4oaj"]
 
 [ext_resource type="Script" uid="uid://bb2gy6ayek432" path="res://scripts/screens/controles_mobile_screen.gd" id="1_s35cl"]
 [ext_resource type="Texture2D" uid="uid://dqscs0gm68qko" path="res://assets/sprites/fundo.jpg" id="2_khmol"]
-[ext_resource type="FontFile" uid="uid://e5pk3fs5adgv" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_fkqnd"]
 [ext_resource type="Theme" uid="uid://bf26rguqthypl" path="res://themes/button_theme.tres" id="4_4l37l"]
+[ext_resource type="LabelSettings" uid="uid://bddvxa5mwul0h" path="res://themes/titulo_theme.tres" id="4_ax5kv"]
+[ext_resource type="LabelSettings" uid="uid://d2nxxy4pd5ni4" path="res://themes/texto_theme.tres" id="5_oj6eh"]
 [ext_resource type="Texture2D" uid="uid://bupjxfeymiqwg" path="res://assets/sprites/botao_cima.png" id="5_s35cl"]
 [ext_resource type="Texture2D" uid="uid://0v4sqjpe66n5" path="res://assets/sprites/botao_cima_pressed.png" id="6_7jgrg"]
 [ext_resource type="Texture2D" uid="uid://hsxgvfon0uo6" path="res://assets/sprites/knight.png" id="6_fpjhk"]
@@ -146,29 +147,25 @@ expand_mode = 2
 
 [node name="Titulo" type="Label" parent="."]
 layout_mode = 2
-offset_left = 115.0
-offset_top = 80.0
-offset_right = 1059.0
+offset_left = 161.0
+offset_top = 72.0
+offset_right = 1223.0
 offset_bottom = 144.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_fkqnd")
-theme_override_font_sizes/font_size = 64
+scale = Vector2(0.8, 0.8)
 text = "Controles Mobile"
+label_settings = ExtResource("4_ax5kv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Texto" type="Label" parent="."]
 layout_mode = 0
-offset_left = 181.0
-offset_top = 173.0
-offset_right = 981.0
-offset_bottom = 223.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_fkqnd")
-theme_override_font_sizes/font_size = 16
+offset_left = 189.0
+offset_top = 177.0
+offset_right = 1350.0
+offset_bottom = 227.0
+scale = Vector2(0.7, 0.7)
 text = "Arraste e ajuste a posição dos botões como preferir..."
+label_settings = ExtResource("5_oj6eh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -179,7 +176,6 @@ offset_top = 21.0
 offset_right = 164.0
 offset_bottom = 49.0
 theme = ExtResource("4_4l37l")
-theme_override_font_sizes/font_size = 24
 text = "Voltar"
 
 [node name="Reset" type="Button" parent="."]
@@ -189,18 +185,17 @@ offset_top = 595.0
 offset_right = 1134.0
 offset_bottom = 623.0
 theme = ExtResource("4_4l37l")
-theme_override_font_sizes/font_size = 24
 text = "Resetar"
 
 [node name="Cavaleiro" type="AnimatedSprite2D" parent="."]
-position = Vector2(128, 422)
+position = Vector2(81, 422)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_qnnn4")
 autoplay = "default"
 frame_progress = 0.614842
 
 [node name="Gato" type="AnimatedSprite2D" parent="."]
-position = Vector2(1124, 421)
+position = Vector2(1100, 421)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_hql33")
 autoplay = "default"
@@ -210,9 +205,9 @@ flip_h = true
 [node name="Controles" type="Control" parent="."]
 clip_contents = true
 anchors_preset = 0
-offset_left = 213.0
+offset_left = 204.0
 offset_top = 244.0
-offset_right = 951.0
+offset_right = 942.0
 offset_bottom = 622.0
 
 [node name="ColorRect" type="ColorRect" parent="Controles"]
@@ -225,9 +220,9 @@ color = Color(0.448067, 0.448067, 0.448067, 1)
 z_index = 1
 layout_mode = 0
 offset_left = 665.0
-offset_top = 310.0
+offset_top = 306.0
 offset_right = 965.0
-offset_bottom = 610.0
+offset_bottom = 606.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("5_s35cl")
 texture_pressed = ExtResource("6_7jgrg")
@@ -238,9 +233,9 @@ script = ExtResource("11_d4cwd")
 [node name="Esquerda" type="TextureButton" parent="Controles"]
 z_index = 1
 layout_mode = 2
-offset_left = 31.0
+offset_left = 18.0
 offset_top = 303.0
-offset_right = 331.0
+offset_right = 318.0
 offset_bottom = 603.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("7_ax5kv")
@@ -252,9 +247,9 @@ script = ExtResource("11_d4cwd")
 [node name="Direita" type="TextureButton" parent="Controles"]
 z_index = 1
 layout_mode = 2
-offset_left = 136.0
+offset_left = 127.0
 offset_top = 304.0
-offset_right = 436.0
+offset_right = 427.0
 offset_bottom = 604.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("9_mpjqy")

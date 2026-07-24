@@ -1,6 +1,6 @@
 extends Control
 
-@onready var check_button: CheckButton = $CheckButton
+@onready var check_button: CheckButton = $VBoxContainer/CheckButton
 
 func _ready() -> void:
 	check_button.button_pressed = GameManager.mobile

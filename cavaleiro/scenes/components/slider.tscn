@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://btlb6p6ukftit"]
 
 [ext_resource type="Script" uid="uid://bhqm7hmkdw0au" path="res://scripts/components/slider.gd" id="1_qn0yo"]
-[ext_resource type="FontFile" uid="uid://dfsodyg8fh8i3" path="res://assets/fonts/PixelOperator8.ttf" id="2_4nwrh"]
 [ext_resource type="Texture2D" uid="uid://ycn303b8u50b" path="res://assets/sprites/grabber.png" id="3_325cn"]
+[ext_resource type="LabelSettings" uid="uid://d2nxxy4pd5ni4" path="res://themes/texto_theme.tres" id="3_wtiab"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtiab"]
 bg_color = Color(0.417432, 0.192663, 0.138955, 1)
@@ -61,8 +61,7 @@ offset_left = 1.0
 offset_top = -34.0
 offset_right = 169.0
 offset_bottom = -2.0
-theme_override_fonts/font = ExtResource("2_4nwrh")
-theme_override_font_sizes/font_size = 32
+label_settings = ExtResource("3_wtiab")
 vertical_alignment = 1
 
 [node name="SliderVolume" type="HSlider" parent="."]

@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://fpfpdl885wab"]
+
+[ext_resource type="FontFile" uid="uid://e5pk3fs5adgv" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_jvjxa"]
+
+[resource]
+font = ExtResource("1_jvjxa")
+font_size = 60
+font_color = Color(1, 1, 0.105882, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 25
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)

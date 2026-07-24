@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bn2fr43k51lbw"]
+[gd_scene load_steps=43 format=3 uid="uid://bn2fr43k51lbw"]
 
 [ext_resource type="Script" uid="uid://b3c2b08f0lwhk" path="res://scripts/levels/level.gd" id="1_40ga3"]
 [ext_resource type="Texture2D" uid="uid://bwh76waw407ei" path="res://assets/sprites/world_tileset.png" id="2_ynct0"]
@@ -29,10 +29,12 @@
 [ext_resource type="Texture2D" uid="uid://bupjxfeymiqwg" path="res://assets/sprites/botao_cima.png" id="20_rb8uy"]
 [ext_resource type="Texture2D" uid="uid://dk3stx51s4dkx" path="res://assets/sprites/botao_esquerda.png" id="21_7wjjj"]
 [ext_resource type="Texture2D" uid="uid://djia1grds7joq" path="res://assets/sprites/botao_direita.png" id="22_jqu2d"]
+[ext_resource type="LabelSettings" uid="uid://cvrirtoelln6g" path="res://themes/texto_pequeno_theme.tres" id="22_y1kfd"]
 [ext_resource type="Texture2D" uid="uid://0v4sqjpe66n5" path="res://assets/sprites/botao_cima_pressed.png" id="25_td2jx"]
 [ext_resource type="Script" uid="uid://cyfhwfp1m7nx8" path="res://scripts/components/mobile_button.gd" id="26_41y26"]
 [ext_resource type="Texture2D" uid="uid://ctopvb8tmql3i" path="res://assets/sprites/botao_esquerda_pressed.png" id="27_41y26"]
 [ext_resource type="Texture2D" uid="uid://bp4wx7664wou2" path="res://assets/sprites/botao_direita_pressed.png" id="29_y1kfd"]
+[ext_resource type="PackedScene" uid="uid://bcgmbi7w43vb5" path="res://scenes/screens/pause_screen.tscn" id="33_utl00"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_40ga3"]
 texture = ExtResource("2_ynct0")
@@ -285,9 +287,8 @@ columns = 3
 custom_minimum_size = Vector2(80, 20)
 layout_direction = 2
 layout_mode = 2
-theme_override_fonts/font = ExtResource("16_x2afm")
-theme_override_font_sizes/font_size = 8
 text = "Level"
+label_settings = ExtResource("22_y1kfd")
 vertical_alignment = 1
 
 [node name="Pontos" type="Label" parent="Player/HUD"]
@@ -297,6 +298,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("16_x2afm")
 theme_override_font_sizes/font_size = 8
 text = "50"
+label_settings = ExtResource("22_y1kfd")
 vertical_alignment = 1
 
 [node name="Moedas" type="Label" parent="Player/HUD"]
@@ -306,25 +308,26 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("16_x2afm")
 theme_override_font_sizes/font_size = 8
 text = "50"
+label_settings = ExtResource("22_y1kfd")
 vertical_alignment = 1
 
 [node name="TextureRect" type="Sprite2D" parent="Player/HUD/Moedas"]
-position = Vector2(-5.83332, 9.16668)
-scale = Vector2(0.7, 0.7)
+position = Vector2(-8.33337, 10)
+scale = Vector2(0.97, 0.97)
 texture = ExtResource("16_1vve2")
 region_enabled = true
 region_rect = Rect2(1, 1, 14, 14)
 
-[node name="Menu" type="Button" parent="Player"]
-offset_left = 104.167
+[node name="Pause" type="Button" parent="Player"]
+offset_left = 101.667
 offset_top = -95.0
-offset_right = 168.167
+offset_right = 175.667
 offset_bottom = -75.0
 scale = Vector2(0.4, 0.4)
 theme = ExtResource("20_4vntt")
 theme_override_fonts/font = ExtResource("16_x2afm")
 theme_override_font_sizes/font_size = 16
-text = "Menu"
+text = "Pause"
 
 [node name="Pular" type="TouchScreenButton" parent="Player"]
 z_index = 1
@@ -355,6 +358,22 @@ texture_pressed = ExtResource("29_y1kfd")
 shape = SubResource("CircleShape2D_jqu2d")
 action = "direita"
 script = ExtResource("26_41y26")
+
+[node name="PauseScreen" parent="Player" instance=ExtResource("33_utl00")]
+visible = false
+z_index = 1000
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -138.333
+offset_top = -105.0
+offset_right = -138.333
+offset_bottom = -105.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.24, 0.24)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Killzone" parent="." instance=ExtResource("7_p7rbk")]
 position = Vector2(0, 243)
@@ -388,4 +407,4 @@ text = "Colete x moedas!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="Player/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Player/Pause" to="." method="_on_pause_pressed"]

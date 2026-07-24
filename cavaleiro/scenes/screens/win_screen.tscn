@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://mwt4unjnbd22"]
+[gd_scene load_steps=35 format=3 uid="uid://mwt4unjnbd22"]
 
 [ext_resource type="Script" uid="uid://dheb3xoiq074g" path="res://scripts/screens/win_screen.gd" id="1_cmosp"]
 [ext_resource type="Texture2D" uid="uid://dqscs0gm68qko" path="res://assets/sprites/fundo.jpg" id="2_ey0qu"]
 [ext_resource type="FontFile" uid="uid://e5pk3fs5adgv" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_l5ckm"]
 [ext_resource type="Theme" uid="uid://bf26rguqthypl" path="res://themes/button_theme.tres" id="4_5w3vv"]
+[ext_resource type="LabelSettings" uid="uid://bddvxa5mwul0h" path="res://themes/titulo_theme.tres" id="4_l5ckm"]
 [ext_resource type="Texture2D" uid="uid://hsxgvfon0uo6" path="res://assets/sprites/knight.png" id="5_yphky"]
 [ext_resource type="Texture2D" uid="uid://bi0ph5y72rtjk" path="res://assets/sprites/Cat Sprite Sheet.png" id="6_ey0qu"]
 
@@ -236,6 +237,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_l5ckm")
 theme_override_font_sizes/font_size = 80
 text = "Vitória!"
+label_settings = ExtResource("4_l5ckm")
 horizontal_alignment = 1
 vertical_alignment = 1
 

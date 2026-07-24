@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dc3woj6l5aq82"]
+[gd_scene load_steps=35 format=3 uid="uid://dc3woj6l5aq82"]
 
 [ext_resource type="Script" uid="uid://oideokmtek2m" path="res://scripts/screens/levels_screen.gd" id="1_q17xn"]
 [ext_resource type="Texture2D" uid="uid://dqscs0gm68qko" path="res://assets/sprites/fundo.jpg" id="2_4plrj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://bf26rguqthypl" path="res://themes/button_theme.tres" id="4_4e537"]
 [ext_resource type="FontFile" uid="uid://dfsodyg8fh8i3" path="res://assets/fonts/PixelOperator8.ttf" id="5_4plrj"]
 [ext_resource type="Texture2D" uid="uid://hsxgvfon0uo6" path="res://assets/sprites/knight.png" id="5_ofqpg"]
+[ext_resource type="LabelSettings" uid="uid://bddvxa5mwul0h" path="res://themes/titulo_theme.tres" id="6_4e537"]
 [ext_resource type="Texture2D" uid="uid://bi0ph5y72rtjk" path="res://assets/sprites/Cat Sprite Sheet.png" id="7_dot13"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q17xn"]
@@ -249,6 +250,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_n38sw")
 theme_override_font_sizes/font_size = 80
 text = "Níveis"
+label_settings = ExtResource("6_4e537")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -259,11 +261,9 @@ size_flags_vertical = 4
 theme_override_constants/separation = 0
 
 [node name="Level" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("4_4e537")
-theme_override_fonts/font = ExtResource("5_4plrj")
-theme_override_font_sizes/font_size = 32
 text = "1"
 
 [node name="Cavaleiro" type="AnimatedSprite2D" parent="."]

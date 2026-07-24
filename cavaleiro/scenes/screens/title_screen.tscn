@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8635kaecx0s3"]
+[gd_scene load_steps=22 format=3 uid="uid://c8635kaecx0s3"]
 
 [ext_resource type="Script" uid="uid://b14khs86pejsi" path="res://scripts/screens/title_screen.gd" id="1_wb8xf"]
 [ext_resource type="Texture2D" uid="uid://dqscs0gm68qko" path="res://assets/sprites/fundo.jpg" id="2_ehvh6"]
-[ext_resource type="Texture2D" uid="uid://y1ym31xu1qmg" path="res://assets/sprites/logo.png" id="3_2neum"]
+[ext_resource type="LabelSettings" uid="uid://fpfpdl885wab" path="res://themes/title_theme.tres" id="3_2neum"]
 [ext_resource type="Theme" uid="uid://bf26rguqthypl" path="res://themes/button_theme.tres" id="4_0virr"]
+[ext_resource type="LabelSettings" uid="uid://x8iyqg6hovac" path="res://themes/subtitle_theme.tres" id="4_2neum"]
 [ext_resource type="Texture2D" uid="uid://hsxgvfon0uo6" path="res://assets/sprites/knight.png" id="5_glmg5"]
 [ext_resource type="Texture2D" uid="uid://bi0ph5y72rtjk" path="res://assets/sprites/Cat Sprite Sheet.png" id="6_ehvh6"]
 
@@ -137,32 +138,55 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(1000, 500)
 layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 13
+theme_override_constants/separation = 100
+alignment = 1
 
-[node name="Logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_2neum")
+theme_override_constants/separation = 25
 
-[node name="Jogar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Titulo" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Label"]
 layout_mode = 2
+text = "Cavaleirinho Jonny"
+label_settings = ExtResource("3_2neum")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubTitulo" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Label"]
+layout_mode = 2
+text = "O Resgate de Binny"
+label_settings = ExtResource("4_2neum")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botoes" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Jogar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Botoes"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("4_0virr")
-theme_override_font_sizes/font_size = 24
 text = "Jogar"
 
-[node name="Controles" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Controles" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Botoes"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("4_0virr")
-theme_override_font_sizes/font_size = 24
 text = "Controles"
 
-[node name="Som" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Som" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Botoes"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("4_0virr")
-theme_override_font_sizes/font_size = 24
 text = "Sons"
 
 [node name="Cavaleiro" type="AnimatedSprite2D" parent="."]
@@ -180,6 +204,6 @@ autoplay = "default"
 frame_progress = 0.0816189
 flip_h = true
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Controles" to="." method="_on_controles_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Som" to="." method="_on_som_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Botoes/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Botoes/Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Botoes/Som" to="." method="_on_som_pressed"]
